@@ -155,8 +155,8 @@ const Users = () => {
 
   return (
     <div className="flex flex-col mt-2 min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      {/* <h1 className="text-3xl font-bold mb-3">Users</h1> */}
-      <div className="flex gap-2 justify-center items-center ">
+      <h1 className="text-3xl font-bold mb-3">Users</h1>
+      <div className="flex gap-2 justify-center items-center mt-4 mb-5 ">
         <button
           onClick={fetchUsers}
           className=" bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
