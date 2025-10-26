@@ -1,9 +1,15 @@
+import { auth } from "../auth";
+
 export const metadata = {
   title: "Contact",
   description: "Contact page with a form to reach out to us.",
 };
 
-export default function Contact() {
+export default async function Contact() {
+  const user = await auth();
+  console.log("User Session:", user.user.name);
+  console.log("User Session:", user.user.email);
+
   return (
     <main className="p-10 text-gray-300">
       <h1 className="text-3xl font-bold mb-4">Contact</h1>
