@@ -1,7 +1,14 @@
 import Link from "next/link";
 import React from "react";
+import { signOut } from "../auth";
 
 const Navbar = () => {
+  const SIGNOUT = async () => {
+    "use server";
+
+    await signOut({ redirect: "/" });
+  };
+
   return (
     <nav className="bg-white p-5 mb-5  dark:bg-gray-900">
       <button
@@ -94,6 +101,13 @@ const Navbar = () => {
             >
               Login
             </Link>
+          </li>
+          <li>
+            <form action={SIGNOUT}>
+              <button className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                Logout
+              </button>
+            </form>
           </li>
         </ul>
       </div>
